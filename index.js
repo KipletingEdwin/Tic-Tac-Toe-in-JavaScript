@@ -24,6 +24,14 @@ function initializeGame(){
 
 }
 function cellClicked(){
+    const cellIndex = this.getAttribute("cellIndex");
+
+    if(options[cellIndex] != "" || !running){
+        return;
+    }
+    updateCell(this,cellIndex);
+    checkWinner();
+        
 
 }
 function updateCell(cell,index){
